@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<!-- templates/index.html -->
+
+<html>
+	<head>
+		<title>Netflix Movie Recommendation System</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}"/></noscript>
+	</head>
+	<body class="landing is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="{{ url_for('index') }}">Home</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="{{ url_for('index') }}">Home</a></li>
+											<li><a href="{{ url_for('movies') }}">Movies</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<h2>RECOMMENDATION SYSTEM</h2>
+							<p style="color:white;">Get a recommendation movie.</p>
+							<ul class="actions special">
+								
+							</ul>
+						</div>
+						<a href="#one" class="more scrolly" style="color:white;">Learn More</a>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style1 special">
+						<div class="inner">
+							<header class="major">
+								<h2>To get movie recommendations that you may like,<br />
+								choose the movies you love from the list available in the Movies page.</h2>
+								<p>More than 10.000 movies available for you to choose and get a new movie by a recommendation system.<br />
+								All movies is from a Netflix Kaggle's competition.</p>
+							</header>
+							<ul class="icons major">
+								<li><span class="icon fa-gem major style1"><span class="label">Lorem</span></span></li>
+								<li><span class="icon fa-heart major style2"><span class="label">Ipsum</span></span></li>
+								<li><span class="icon solid fa-code major style3"><span class="label">Dolor</span></span></li>
+							</ul>
+						</div>
+					</section>
+
+
+				<!-- Three -->
+					<section id="three" class="wrapper style3 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Movie Recommendation System Features</h2>
+							</header>
+							<ul class="features">
+								<li class="icon fa-paper-plane">
+									<h3>Share the recommendation output</h3>
+									<p>After getting the recommentation you can download the result and share with anyone you want, or even share this project.</p>
+								</li>
+								<li class="icon solid fa-laptop">
+									<h3>Movies available on Netflix</h3>
+									<p>All movies is still or were available on Netflix, the dataset is from a Kaggle competition.</p>
+								</li>
+								<li class="icon solid fa-code">
+									<h3>Data science project</h3>
+									<p>This project were learned and developed from my Data Science training, which includes long hours studying.</p>
+								</li>
+								<li class="icon fa-heart">
+									<h3>Movies you will love</h3>
+									<p>After you get recommendations from a movie you like, you'll love to have new movies to watch.</p>
+								</li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- CTA -->
+					<section id="cta" class="wrapper style4">
+						<div class="inner">
+							<header>
+								<h2>Get new recommendation</h2>
+								<p style="color:white;">More than 10.000 movies available for you to choose and get a new movie by a recommendation system. All movies is from a Netflix Kaggle's competition.</p>
+							</header>
+							<ul class="actions stacked">
+								<li><a href="{{ url_for('movies') }}" class="button fit primary">Get Started</a></li>
+								<li><a href="" class="button fit">Learn More</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/guimatheus92/?locale=en_US" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://guimatheus92.medium.com/get-new-netflix-movies-by-a-recommendation-system-afbb5d4c0e31" target="_blank" class="icon brands fa-medium"><span class="label">Medium</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; GUILHERME MATHEUS</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/jquery.scrollex.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+	</body>
+</html>

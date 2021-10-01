@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Movies - Netflix Movie Recommendation System</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />	
+		<!-- Bootstrap CSS Style -->
+		<link id="bootstrap-css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+		
+		<!-- Data Table CSS Style -->
+		<link rel="stylesheet" href="//cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css" type="text/css">				
+
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css"/>
+		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" type="text/css"/></noscript>		
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="{{ url_for('index') }}">Home</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="{{ url_for('index') }}">Home</a></li>
+											<li><a href="{{ url_for('movies') }}">Movies</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header style="background-attachment: scroll;">
+							<h2>Movie Recommendation System</h2>
+							<br />
+							<p style="color:white;">To get a new movie recommendation,<br />
+							choose the movies you love from the list available below.</p>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+
+								{% if ratio_disable == False %}
+								<h3>List of all movies</h3>
+								<p>Select a movie you've watched in the list below, to be able to receive new movies recommendations.</p>
+								{% else %}
+								<h3>List of recommendations</h3>
+								<div class="alert alert-success" role="alert">
+									<h4 class="alert-heading">Well done!</h4>
+									<hr style="border-color: white; margin: 0;">
+									<br />
+									<p style="margin: 0 0 1em 0;">{{ Movie_Name }}</p>
+									<p style="margin: 0 0 1em 0;">{{ Total_User_Ratings }}</p>									
+									<p style="margin: 0 0 1em 0;">{{ Total_Movies_Similar }}</p>
+								</div>
+								{% endif %}								
+
+								<div class="container">
+									<div class="row">
+										<form method="POST">
+											<table id="example" class="display">
+												<thead>
+													<tr>
+														{% for header in headings %}
+															<th>{{ header }}</th>
+														{% endfor %}
+															<th></th>
+													</tr>
+												</thead>
+												<tbody>
+													{% for movie in movies %}
+													<tr>
+														{% for cell in movie %}
+															<td>{{ cell }}</td>
+														{% endfor %}
+														{% if ratio_disable == False %}
+															<td><input type="radio" id="oneRadio" name="oneRadio" value="{{ movie[0] }}" ></td>
+														{% else %}
+															<td></td>
+														{% endif %}
+													</tr>
+													{% endfor %}
+												</tbody>
+												<tfoot>
+													<tr>
+														{% for header in headings %}
+															<th>{{ header }}</th>
+														{% endfor %}
+															<th></th>
+													</tr>
+												</tfoot>
+											</table>
+											<br />
+											<div class="container" style="text-align: center">
+												<!--https://www.w3schools.com/bootstrap/bootstrap_alerts.asp-->
+												{% for message in get_flashed_messages() %}
+													<div class="alert alert-danger">{{ message }}</div>
+												{% endfor %}
+											</div>
+											<br />
+											{% if ratio_disable == False %}
+											<div class="form-group" style="text-align: center">
+												<button type="submit" class="btn btn-primary" style="text-align: center">Submit</button>												
+											</div>
+											{% else %}
+											<!--<form method="GET" action="{{ url_for('donwloadrecommendation') }}" disable>
+												<div class="form-group" style="text-align: center">												
+													<button class="btn btn-primary" style="text-align: center">Download Recommendations</button>
+												</div>
+											</form>-->
+											{% endif %}
+										</form>
+									</div>
+								</div>
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/guimatheus92/?locale=en_US" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://guimatheus92.medium.com/get-new-netflix-movies-by-a-recommendation-system-afbb5d4c0e31" target="_blank" class="icon brands fa-medium"><span class="label">Medium</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; GUILHERME MATHEUS</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+											
+			<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/jquery.scrollex.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/datatable.js') }}"></script>
+			<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+			<script type="text/javascript" src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
+	
+
+	</body>
+</html>
