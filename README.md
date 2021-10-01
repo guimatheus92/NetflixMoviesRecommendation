@@ -32,8 +32,7 @@ The tutorial of this application can be found on [GitHub Wiki](https://github.co
 ## Conclusion
 
 1. Want my code? [Grab it here](https://github.com/guimatheus92/NetflixMoviesRecommendation "Grab it here") 📎
-2. Want the tutorial of how to use it? [Go to Wiki](https://github.com/guimatheus92/Game-Recommendation-System/wiki/Tutorial-on-how-to-get-a-recommendation "Go to here") ✔️
-3. Check the article on [Medium](https://guimatheus92.medium.com/get-new-netflix-movies-by-a-recommendation-system-afbb5d4c0e31 "Medium") about this development 📌
-4. 3. Check the article on [Medium](https://guimatheus92.medium.com/deploy-python-application-on-amazon-web-services-aws-6d8bd385b5b "Medium") about this deploy 📌
-5. New ideas for this app? Help me to improve it ❤️
-6. Want something else added to this tutorial? Add an issue to the repo ⚠️
+2. Check the article on [Medium](https://guimatheus92.medium.com/get-new-netflix-movies-by-a-recommendation-system-afbb5d4c0e31 "Medium") about this development 📌
+3. Check the article on [Medium](https://guimatheus92.medium.com/deploy-python-application-on-amazon-web-services-aws-6d8bd385b5b "Medium") about this deploy ⚙️
+4. New ideas for this app? Help me to improve it ❤️
+5. Want something else added to this tutorial? Add an issue to the repo ⚠️
